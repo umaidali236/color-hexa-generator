@@ -1,28 +1,12 @@
-const count = document.querySelector(".count");
-const buttons = document.querySelector(".buttons");
+const hex = document.querySelector(".hex");
+const btn = document.querySelector(".generate");
 
-buttons.addEventListener("click", (e) => {
-    console.log(e.target.classList);
+const generateColor = () => {
+    const randomColor = Math.random().toString(16).substring(2, 8);
+    document.body.style.backgroundColor = "#" + randomColor;
+    hex.innerHTML = "#" + randomColor;
+};
 
-    if (e.target.classList.contains("add")) {
-        count.innerHTML++;
-    }
-    if (e.target.classList.contains("subtract")) {
-        count.innerHTML--;
-    }
-    if (e.target.classList.contains("reset")) {
-        count.innerHTML = 0;
-    }
+btn.addEventListener("click", generateColor);
 
-    setColor();
-});
-
-function setColor() {
-    if (count.innerHTML > 0) {
-        count.style.color = "greenyellow";
-    } else if (count.innerHTML < 0) {
-        count.style.color = "#fe9f7d";
-    } else {
-        count.style.color = "#fff";
-    }
-}
+generateColor();
