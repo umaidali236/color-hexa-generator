@@ -1,2 +1,2 @@
 # color-hexa-generator
-this app is created using html , css , javascript
+**This app is created using html , css and javascript.**
